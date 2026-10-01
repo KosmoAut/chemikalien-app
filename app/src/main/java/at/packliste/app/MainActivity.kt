@@ -5,7 +5,12 @@ import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.app.Dialog
 import android.graphics.Bitmap
+import android.graphics.Color
+import android.graphics.ImageDecoder
+import android.view.Gravity
+import android.widget.FrameLayout
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
@@ -367,7 +372,7 @@ class MainActivity : AppCompatActivity() {
         notifyRow(box, row)
     }
 
-    private fun deleteRow(box: Box, row: Row) {
+    private fun deleteRow(box: Box, row: Row, afterDelete: (() -> Unit)? = null) {
         AlertDialog.Builder(this)
             .setTitle("Zeile löschen?")
             .setMessage("Das Foto wird auch gelöscht.")
@@ -375,10 +380,56 @@ class MainActivity : AppCompatActivity() {
                 if (row.uri.isNotBlank()) try { contentResolver.delete(Uri.parse(row.uri), null, null) } catch (_: Exception) { }
                 box.rows.remove(row)
                 box.rows.forEach { renamePhoto(box, it) }
+                thumbs.remove(row.uri)
                 store.save(); refreshBox()
+                say("Foto gelöscht")
+                afterDelete?.invoke()
             }
             .setNegativeButton("Abbrechen", null)
             .show()
+    }
+
+    /** Foto groß anzeigen, mit Löschen / Name ändern. */
+    private fun showPhoto(row: Row) {
+        val box = store.current
+        val dlg = Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen)
+        val root = FrameLayout(this).apply { setBackgroundColor(Color.BLACK) }
+        val img = ImageView(this).apply { scaleType = ImageView.ScaleType.FIT_CENTER }
+        root.addView(img, FrameLayout.LayoutParams(-1, -1))
+        val title = TextView(this).apply {
+            text = "Nr. ${box.rows.indexOf(row) + 1}: ${row.name.ifBlank { "ohne Namen" }}"
+            setTextColor(Color.WHITE); textSize = 18f
+            setBackgroundColor(0x99000000.toInt())
+            val p = (14 * resources.displayMetrics.density).toInt(); setPadding(p, p, p, p)
+        }
+        root.addView(title, FrameLayout.LayoutParams(-1, -2, Gravity.TOP))
+        val bar = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            setBackgroundColor(0x99000000.toInt())
+            val p = (8 * resources.displayMetrics.density).toInt(); setPadding(p, p, p, p)
+        }
+        fun btn(label: String, color: Int, onClick: () -> Unit) = Button(this).apply {
+            text = label; isAllCaps = false; setTextColor(color)
+            setBackgroundColor(Color.TRANSPARENT)
+            setOnClickListener { onClick() }
+        }
+        bar.addView(btn("Löschen", 0xFFFF5A64.toInt()) { deleteRow(box, row) { dlg.dismiss() } }, LinearLayout.LayoutParams(0, -2, 1f))
+        bar.addView(btn("Name ändern", Color.WHITE) { dlg.dismiss(); editRow(row) }, LinearLayout.LayoutParams(0, -2, 1f))
+        bar.addView(btn("Schließen", Color.WHITE) { dlg.dismiss() }, LinearLayout.LayoutParams(0, -2, 1f))
+        root.addView(bar, FrameLayout.LayoutParams(-1, -2, Gravity.BOTTOM))
+        dlg.setContentView(root)
+        dlg.show()
+
+        val maxSide = maxOf(resources.displayMetrics.widthPixels, resources.displayMetrics.heightPixels)
+        io.execute {
+            val bmp = try {
+                ImageDecoder.decodeBitmap(ImageDecoder.createSource(contentResolver, Uri.parse(row.uri))) { dec, info, _ ->
+                    val s = maxOf(info.size.width, info.size.height)
+                    if (s > maxSide) dec.setTargetSampleSize(maxOf(1, s / maxSide))
+                }
+            } catch (_: Exception) { null }
+            main.post { if (bmp != null) img.setImageBitmap(bmp) else title.text = "Foto nicht gefunden (evtl. in der Galerie gelöscht)" }
+        }
     }
 
     private fun padded(v: View): View {
@@ -444,6 +495,8 @@ class MainActivity : AppCompatActivity() {
             }
             h.busy.visibility = if (row.reading) View.VISIBLE else View.GONE
             h.itemView.setOnClickListener { editRow(row) }
+            h.itemView.setOnLongClickListener { deleteRow(store.current, row); true }
+            h.thumb.setOnClickListener { if (row.uri.isNotBlank()) showPhoto(row) else editRow(row) }
             h.thumb.setImageDrawable(null)
             h.thumb.tag = row.uri
             if (row.uri.isNotBlank()) {
