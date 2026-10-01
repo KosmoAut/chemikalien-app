@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
     private val main = Handler(Looper.getMainLooper())
     private val thumbs = LruCache<String, Bitmap>(80)
     private var updatingUi = false
+    private lateinit var spinnerAdapter: ArrayAdapter<String>
 
     private val deleteLauncher = registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { }
 
@@ -120,9 +121,12 @@ class MainActivity : AppCompatActivity() {
         list.layoutManager = LinearLayoutManager(this)
         list.adapter = adapter
 
+        spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, mutableListOf<String>())
+        spinner.adapter = spinnerAdapter
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p: AdapterView<*>?, v: View?, pos: Int, id: Long) {
-                if (updatingUi) return
+                // nur echte Auswahl durch den Benutzer verarbeiten (sonst Endlosschleife Spinner <-> Liste)
+                if (updatingUi || pos == store.currentIndex) return
                 store.currentIndex = pos
                 store.save()
                 refreshBox()
@@ -530,26 +534,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun refreshAll() {
-        updatingUi = true
-        val labels = store.boxes.map { "${it.name}  (${it.rows.size})" }
-        spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, labels)
-        spinner.setSelection(store.currentIndex.coerceIn(0, store.boxes.size - 1))
-        updatingUi = false
+        updateSpinnerLabels()
         refreshBox()
     }
 
+    /** Beschriftungen der Box-Auswahl aktualisieren, ohne einen neuen Adapter zu setzen. */
     private fun updateSpinnerLabels() {
-        val a = spinner.adapter as? ArrayAdapter<*> ?: return
-        if (a.count != store.boxes.size) { refreshAll(); return }
         updatingUi = true
-        spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, store.boxes.map { "${it.name}  (${it.rows.size})" })
-        spinner.setSelection(store.currentIndex)
+        spinnerAdapter.clear()
+        spinnerAdapter.addAll(store.boxes.map { "${it.name}  (${it.rows.size})" })
+        spinnerAdapter.notifyDataSetChanged()
+        val idx = store.currentIndex.coerceIn(0, store.boxes.size - 1)
+        if (spinner.selectedItemPosition != idx) spinner.setSelection(idx)
         updatingUi = false
     }
 
     private fun refreshBox() {
         updatingUi = true
-        kons.check(if (store.current.kons == "fest") R.id.fest else R.id.fluessig)
+        val want = if (store.current.kons == "fest") R.id.fest else R.id.fluessig
+        if (kons.checkedRadioButtonId != want) kons.check(want)
         updatingUi = false
         adapter.notifyDataSetChanged()
         updateSpinnerLabels()
