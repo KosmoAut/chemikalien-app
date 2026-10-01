@@ -150,7 +150,8 @@ class MainActivity : AppCompatActivity() {
             AlertDialog.Builder(this).setTitle("Letzter Absturz").setMessage(txt).setPositiveButton("OK", null).show()
         }
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) startCamera()
+        if (intent?.getBooleanExtra("nocamera", false) == true) { /* automatischer Test ohne Kamera */ }
+        else if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) startCamera()
         else camPermission.launch(Manifest.permission.CAMERA)
         handleShare(intent)
     }
@@ -174,7 +175,7 @@ class MainActivity : AppCompatActivity() {
         for (u in uris) importImage(u)
     }
 
-    private fun importImage(src: Uri) {
+    internal fun importImage(src: Uri) {
         val box = store.current
         val nr = box.rows.size + 1
         try {

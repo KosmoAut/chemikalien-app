@@ -54,68 +54,73 @@ class AppTest {
         override fun perform(ui: UiController, view: View) { view.findViewById<View>(id).performClick() }
     }
 
-    private fun rowCount(s: ActivityScenario<MainActivity>): Int {
+    private fun launch(): ActivityScenario<MainActivity> {
+        val i = android.content.Intent(ctx, MainActivity::class.java).putExtra("nocamera", true)
+        return ActivityScenario.launch(i)
+    }
+
+    private fun rows(s: ActivityScenario<MainActivity>): List<Row> {
+        var r: List<Row> = emptyList()
+        s.onActivity { r = Store(it).apply { load() }.current.rows.toList() }
+        return r
+    }
+
+    private fun shown(s: ActivityScenario<MainActivity>): Int {
         var n = -1
         s.onActivity { n = it.findViewById<RecyclerView>(R.id.list).adapter!!.itemCount }
         return n
     }
 
-    private fun takePhoto() {
-        onView(withId(R.id.capture)).perform(click())
-        onView(isRoot()).perform(waitMs(6000))
-    }
-
-    @Test fun fotoAntippenUndLoeschen() {
-        ActivityScenario.launch(MainActivity::class.java).use { s ->
-            onView(isRoot()).perform(waitMs(4000))
-            takePhoto()
-            assertEquals("Zeile nach Foto", 1, rowCount(s))
-            // Vorschaubild antippen -> Großansicht mit Löschen
-            onView(withId(R.id.list)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, clickChild(R.id.thumb)))
-            onView(isRoot()).perform(waitMs(1500))
-            onView(withText("Schließen")).inRoot(isDialog()).check(matches(isDisplayed()))
-            onView(withText("Löschen")).inRoot(isDialog()).perform(click())
-            onView(isRoot()).perform(waitMs(800))
-            onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click())
-            onView(isRoot()).perform(waitMs(1500))
-            assertEquals("Zeilen nach Löschen", 0, rowCount(s))
+    /** Etikettbild wie ein geteiltes Foto in die App geben und auf die Erkennung warten. */
+    private fun addLabel(s: ActivityScenario<MainActivity>, asset: String) {
+        val testCtx = InstrumentationRegistry.getInstrumentation().context
+        val f = File(ctx.cacheDir, asset)
+        testCtx.assets.open(asset).use { inp -> f.outputStream().use { inp.copyTo(it) } }
+        s.onActivity { it.importImage(android.net.Uri.fromFile(f)) }
+        for (k in 0 until 40) {
+            Thread.sleep(500)
+            val r = rows(s)
+            if (r.isNotEmpty() && r.last().name.isNotBlank()) break
         }
+        Thread.sleep(500)
     }
 
-    @Test fun zeileAntippenUndLangDruecken() {
-        ActivityScenario.launch(MainActivity::class.java).use { s ->
-            onView(isRoot()).perform(waitMs(4000))
-            takePhoto()
-            // echtes Antippen der Zeile (wie mit dem Finger)
-            onView(withId(R.id.list)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
-            onView(isRoot()).perform(waitMs(1000))
-            onView(withText("Speichern")).inRoot(isDialog()).check(matches(isDisplayed()))
-            onView(withText("Abbrechen")).inRoot(isDialog()).perform(click())
-            // lange drücken -> löschen
-            onView(withId(R.id.list)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, longClick()))
-            onView(isRoot()).perform(waitMs(800))
-            onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click())
-            onView(isRoot()).perform(waitMs(1500))
-            assertEquals("Zeilen nach lang drücken", 0, rowCount(s))
-        }
-    }
+    @Test fun erkennungUndAntippenUndLoeschen() {
+        launch().use { s ->
+            addLabel(s, "label_panreac.jpg")
+            addLabel(s, "label_aceton.jpg")
+            val names = rows(s).map { it.name }
+            Log.i("PACKTEST", "Namen in der Liste: $names")
+            assertEquals("angezeigte Zeilen", 2, shown(s))
+            assertEquals(listOf("Acetonitril", "Aceton"), names)
 
-    @Test fun vorschaubildMitFingerAntippen() {
-        ActivityScenario.launch(MainActivity::class.java).use { s ->
-            onView(isRoot()).perform(waitMs(4000))
-            takePhoto()
-            // echter Touch auf die Mitte des Vorschaubilds
+            // Vorschaubild mit echtem Touch antippen -> Großansicht
             onView(withId(R.id.list)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, object : ViewAction {
                 override fun getConstraints(): Matcher<View>? = null
                 override fun getDescription() = "Touch auf Vorschaubild"
-                override fun perform(ui: UiController, view: View) {
-                    val t = view.findViewById<View>(R.id.thumb)
-                    click().perform(ui, t)
-                }
+                override fun perform(ui: UiController, view: View) { click().perform(ui, view.findViewById(R.id.thumb)) }
             }))
-            onView(isRoot()).perform(waitMs(1500))
             onView(withText("Schließen")).inRoot(isDialog()).check(matches(isDisplayed()))
-            onView(withText("Schließen")).inRoot(isDialog()).perform(click())
+            Log.i("PACKTEST", "Großansicht geöffnet")
+            onView(withText("Löschen")).inRoot(isDialog()).perform(click())
+            onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click())
+            Thread.sleep(800)
+            assertEquals("Zeilen nach Löschen in Großansicht", 1, rows(s).size)
+            assertEquals("angezeigt nach Löschen", 1, shown(s))
+            Log.i("PACKTEST", "Löschen in Großansicht ok")
+
+            // Zeile antippen -> Namen-Dialog
+            onView(withId(R.id.list)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+            onView(withText("Speichern")).inRoot(isDialog()).check(matches(isDisplayed()))
+            onView(withText("Abbrechen")).inRoot(isDialog()).perform(click())
+            Log.i("PACKTEST", "Namen-Dialog ok")
+
+            // lange drücken -> löschen
+            onView(withId(R.id.list)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, longClick()))
+            onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click())
+            Thread.sleep(800)
+            assertEquals("Zeilen nach lang drücken", 0, rows(s).size)
+            Log.i("PACKTEST", "Lang drücken ok")
         }
     }
 
