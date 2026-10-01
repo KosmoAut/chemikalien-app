@@ -99,6 +99,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val crashFile = java.io.File(filesDir, "absturz.txt")
+        val prev = Thread.getDefaultUncaughtExceptionHandler()
+        Thread.setDefaultUncaughtExceptionHandler { t, e ->
+            try { crashFile.writeText("${e.javaClass.simpleName}: ${e.message}\n" + e.stackTrace.take(6).joinToString("\n")) } catch (_: Exception) { }
+            prev?.uncaughtException(t, e)
+        }
         setContentView(R.layout.activity_main)
         preview = findViewById(R.id.preview)
         status = findViewById(R.id.status)
@@ -139,6 +145,10 @@ class MainActivity : AppCompatActivity() {
         refreshAll()
         val ver = try { packageManager.getPackageInfo(packageName, 0).versionName } catch (_: Exception) { "?" }
         say("Packliste Version $ver – Etikett antippen zum Scharfstellen")
+        if (crashFile.exists()) {
+            val txt = crashFile.readText(); crashFile.delete()
+            AlertDialog.Builder(this).setTitle("Letzter Absturz").setMessage(txt).setPositiveButton("OK", null).show()
+        }
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) startCamera()
         else camPermission.launch(Manifest.permission.CAMERA)
@@ -469,6 +479,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun say(msg: String) { status.text = msg }
 
+    private fun safely(what: String, block: () -> Unit) {
+        say("$what angetippt …")
+        try { block() } catch (e: Throwable) { say("Fehler ($what): ${e.javaClass.simpleName}: ${e.message}") }
+    }
+
     private fun refreshAll() {
         updatingUi = true
         val labels = store.boxes.map { "${it.name}  (${it.rows.size})" }
@@ -522,9 +537,10 @@ class MainActivity : AppCompatActivity() {
                 else -> row.name
             }
             h.busy.visibility = if (row.reading) View.VISIBLE else View.GONE
-            h.itemView.setOnClickListener { editRow(row) }
-            h.itemView.setOnLongClickListener { deleteRow(store.current, row); true }
-            h.thumb.setOnClickListener { if (row.uri.isNotBlank()) showPhoto(row) else editRow(row) }
+            h.itemView.setOnClickListener { safely("Zeile") { editRow(row) } }
+            h.itemView.setOnLongClickListener { safely("Löschen") { deleteRow(store.current, row) }; true }
+            h.thumb.isClickable = true
+            h.thumb.setOnClickListener { safely("Foto") { if (row.uri.isNotBlank()) showPhoto(row) else editRow(row) } }
             h.thumb.setImageDrawable(null)
             h.thumb.tag = row.uri
             if (row.uri.isNotBlank()) {
