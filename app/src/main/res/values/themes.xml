@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#D0101C</color>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryVariant">#9E0A14</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+    </style>
+</resources>
