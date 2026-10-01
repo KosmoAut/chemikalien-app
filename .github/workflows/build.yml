@@ -20,7 +20,24 @@ jobs:
         with:
           gradle-version: "8.11.1"
       - name: APK bauen
-        run: gradle testReleaseUnitTest assembleRelease --no-daemon --stacktrace
+        run: |
+          set -o pipefail
+          gradle testReleaseUnitTest assembleRelease --no-daemon --stacktrace 2>&1 | tee build_ausgabe.txt
+      - name: Fehlerbericht sammeln
+        if: failure()
+        run: |
+          mkdir -p fehler
+          tail -300 build_ausgabe.txt > fehler/build_ausgabe.txt || true
+          for f in app/build/test-results/testReleaseUnitTest/*.xml; do [ -f "$f" ] && cp "$f" "fehler/$(basename "$f").txt"; done
+      - name: Fehlerbericht veröffentlichen
+        if: failure()
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: fehler-${{ github.run_number }}
+          name: Fehler ${{ github.run_number }}
+          prerelease: true
+          make_latest: false
+          files: fehler/*
       - name: APK umbenennen
         run: cp app/build/outputs/apk/release/app-release.apk Packliste.apk
       - uses: actions/upload-artifact@v4
