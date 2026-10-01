@@ -152,6 +152,50 @@ class MainActivity : AppCompatActivity() {
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) startCamera()
         else camPermission.launch(Manifest.permission.CAMERA)
+        handleShare(intent)
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        handleShare(intent)
+    }
+
+    /** Fotos, die aus der Galerie o. Ä. an die App geteilt werden, in die aktuelle Box übernehmen. */
+    @Suppress("DEPRECATION")
+    private fun handleShare(intent: Intent?) {
+        if (intent == null) return
+        val uris = when (intent.action) {
+            Intent.ACTION_SEND -> listOfNotNull(intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM))
+            Intent.ACTION_SEND_MULTIPLE -> intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM) ?: emptyList()
+            else -> emptyList()
+        }
+        if (uris.isEmpty()) return
+        intent.action = null
+        for (u in uris) importImage(u)
+    }
+
+    private fun importImage(src: Uri) {
+        val box = store.current
+        val nr = box.rows.size + 1
+        try {
+            val values = ContentValues().apply {
+                put(MediaStore.MediaColumns.DISPLAY_NAME, String.format(Locale.ROOT, "%03d_foto_%d.jpg", nr, System.currentTimeMillis()))
+                put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+                put(MediaStore.MediaColumns.RELATIVE_PATH, photoFolder(box))
+            }
+            val dst = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values) ?: throw IllegalStateException("kein Speicherplatz")
+            contentResolver.openInputStream(src).use { input ->
+                contentResolver.openOutputStream(dst).use { out -> input!!.copyTo(out!!) }
+            }
+            val row = Row(uri = dst.toString(), reading = true)
+            box.rows.add(row)
+            store.save()
+            refreshBox()
+            list.scrollToPosition(box.rows.size - 1)
+            recognize(box, row, dst)
+        } catch (e: Exception) {
+            say("Foto konnte nicht übernommen werden: ${e.message}")
+        }
     }
 
     // ---------- Kamera ----------
