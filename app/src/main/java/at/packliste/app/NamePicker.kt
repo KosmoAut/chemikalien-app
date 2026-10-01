@@ -76,11 +76,12 @@ object NamePicker {
             val next = candidates.firstOrNull {
                 it !== first && abs(it.height - first.height) < first.height * 0.2f && it.top > first.top && it.top - first.top < first.height * 1.8f
             }
-            if (next != null) out.add(strip(first.text + " " + next.text))
-            out.add(strip(first.text))
+            if (next != null) out.add(pretty(strip(first.text + " " + next.text)))
+            out.add(pretty(strip(first.text)))
         }
-        for (c in candidates) out.add(strip(c.text))
-        return out.map(::pretty).filter { it.length >= 3 }.distinct().take(6)
+        for (c in candidates) out.add(pretty(strip(c.text)))
+        // Namen aus der Liste bleiben genau so geschrieben (NADP, MOPS, HEPES …)
+        return out.filter { it.length >= 3 }.distinct().take(6)
     }
 
     private fun strip(s: String): String {
