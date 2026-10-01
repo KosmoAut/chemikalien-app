@@ -12,6 +12,7 @@ class Row(
     var uri: String = "",
     var alt: List<String> = emptyList(),
     var reading: Boolean = false,
+    var raw: List<String> = emptyList(),
 )
 
 class Box(
@@ -63,7 +64,10 @@ class Store(context: Context) {
                     val alt = mutableListOf<String>()
                     val aa = r.optJSONArray("alt") ?: JSONArray()
                     for (k in 0 until aa.length()) alt.add(aa.getString(k))
-                    rows.add(Row(r.optString("id", UUID.randomUUID().toString()), r.optString("name"), r.optString("uri"), alt))
+                    val raw = mutableListOf<String>()
+                    val rw = r.optJSONArray("raw") ?: JSONArray()
+                    for (k in 0 until rw.length()) raw.add(rw.getString(k))
+                    rows.add(Row(r.optString("id", UUID.randomUUID().toString()), r.optString("name"), r.optString("uri"), alt, false, raw))
                 }
                 boxes.add(Box(o.optString("id", UUID.randomUUID().toString()), o.optString("name", "Box"), o.optString("kons", "flüssig"), rows, o.optString("docUri"), o.optString("csvUri")))
             }
@@ -79,7 +83,7 @@ class Store(context: Context) {
         for (b in boxes) {
             val ra = JSONArray()
             for (r in b.rows) {
-                ra.put(JSONObject().put("id", r.id).put("name", r.name).put("uri", r.uri).put("alt", JSONArray(r.alt)))
+                ra.put(JSONObject().put("id", r.id).put("name", r.name).put("uri", r.uri).put("alt", JSONArray(r.alt)).put("raw", JSONArray(r.raw)))
             }
             arr.put(JSONObject().put("id", b.id).put("name", b.name).put("kons", b.kons).put("rows", ra).put("docUri", b.docUri).put("csvUri", b.csvUri))
         }

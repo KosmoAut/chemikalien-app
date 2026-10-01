@@ -35,7 +35,9 @@ import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import android.os.Build
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.Camera
@@ -72,6 +74,24 @@ class MainActivity : AppCompatActivity() {
     private val main = Handler(Looper.getMainLooper())
     private val thumbs = LruCache<String, Bitmap>(80)
     private var updatingUi = false
+
+    private val deleteLauncher = registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { }
+
+    /** Foto löschen; bei Fotos aus einer früheren Installation fragt Android um Erlaubnis. */
+    private fun deletePhotoFile(uriStr: String) {
+        if (uriStr.isBlank()) return
+        val uri = Uri.parse(uriStr)
+        try {
+            contentResolver.delete(uri, null, null)
+        } catch (e: SecurityException) {
+            if (Build.VERSION.SDK_INT >= 30) {
+                try {
+                    val sender = MediaStore.createDeleteRequest(contentResolver, listOf(uri)).intentSender
+                    deleteLauncher.launch(IntentSenderRequest.Builder(sender).build())
+                } catch (_: Exception) { }
+            }
+        } catch (_: Exception) { }
+    }
 
     private val camPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { ok ->
         if (ok) startCamera() else say("Ohne Kamera-Erlaubnis geht es nicht. In den Einstellungen erlauben.")
@@ -117,6 +137,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.capture).setOnClickListener { takePhoto() }
 
         refreshAll()
+        val ver = try { packageManager.getPackageInfo(packageName, 0).versionName } catch (_: Exception) { "?" }
+        say("Packliste Version $ver – Etikett antippen zum Scharfstellen")
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) startCamera()
         else camPermission.launch(Manifest.permission.CAMERA)
@@ -211,6 +233,7 @@ class MainActivity : AppCompatActivity() {
         recognizer.process(image)
             .addOnSuccessListener { text ->
                 val alts = NamePicker.pick(text)
+                row.raw = text.textBlocks.flatMap { b -> b.lines.map { it.text } }.take(20)
                 row.alt = alts
                 if (row.name.isBlank()) row.name = alts.firstOrNull() ?: ""
                 row.reading = false
@@ -349,6 +372,11 @@ class MainActivity : AppCompatActivity() {
                 setOnClickListener { setRowName(box, row, a); dialog.dismiss() }
             })
         }
+        if (row.raw.isNotEmpty()) wrap.addView(TextView(this).apply {
+            text = "Gelesener Text:\n" + row.raw.joinToString(" · ")
+            textSize = 12f
+            setPadding(0, 8, 0, 8)
+        })
         wrap.addView(input)
         if (row.uri.isNotBlank()) wrap.addView(Button(this).apply {
             text = "Erneut lesen"
@@ -377,7 +405,7 @@ class MainActivity : AppCompatActivity() {
             .setTitle("Zeile löschen?")
             .setMessage("Das Foto wird auch gelöscht.")
             .setPositiveButton("Löschen") { _, _ ->
-                if (row.uri.isNotBlank()) try { contentResolver.delete(Uri.parse(row.uri), null, null) } catch (_: Exception) { }
+                deletePhotoFile(row.uri)
                 box.rows.remove(row)
                 box.rows.forEach { renamePhoto(box, it) }
                 thumbs.remove(row.uri)
