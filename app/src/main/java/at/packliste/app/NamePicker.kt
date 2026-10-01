@@ -22,10 +22,10 @@ object NamePicker {
     )
     private val BRAND = Regex(
         "(merck|sigma|aldrich|millipore|roth|vwr|fisher|thermo|honeywell|fluka|riedel|alfa aesar|acros|\\btci\\b|chemsolute|" +
-            "applichem|panreac|supelco|scharlau|carlo erba|grüssing|lenovo|dell|samsung|apatina|reagents|itw|avantor|j\\.?t\\.? ?baker)",
+            "applichem|panreac|supelco|scharlau|carlo erba|grüssing|lenovo|dell|samsung|apatina|reagents|itw|avantor|j\\.?t\\.? ?baker|\\bsial\\b|bldpharm|tokyo chemical|tokio chemical|roche|abcr|fluorochem|apollo scientific|santa cruz|cayman|biosynth|carbosynth|serva|lonza|gibco|invitrogen|bio-rad|biorad|emd|calbiochem|sigma-aldrich|thermo scientific|chemcruz|enamine|combi-blocks|strem)",
         RegexOption.IGNORE_CASE,
     )
-    private val CLEAN = Regex("[^\\p{L}\\p{N}()\\-,.%+/ ]")
+    private val CLEAN = Regex("[^\\p{L}\\p{N}()\\[\\]{}\\-,.%+/'±′ ]")
     private val SPACES = Regex("\\s+")
     /** Qualitätsangaben hinten abschneiden: "Acetonitrile for UV, IR, HPLC" → "Acetonitrile". */
     private val GRADE = Regex(

@@ -413,6 +413,257 @@ Hämatoxylin|Hematoxylin|517-28-2
 Trimethylchlorsilan|Chlortrimethylsilan|Chlorotrimethylsilane|75-77-4
 Natriumnitroprussid|Sodium nitroprusside|13755-38-9
 Terpentinöl|Turpentine oil|8006-64-2
+L-Alanin|Alanin|L-Alanine|Alanine|56-41-7
+L-Arginin|Arginin|L-Arginine|Arginine|74-79-3
+L-Asparagin|Asparagin|L-Asparagine|70-47-3
+L-Asparaginsäure|Asparaginsäure|L-Aspartic acid|Aspartic acid|56-84-8
+L-Cystein|Cystein|L-Cysteine|Cysteine|52-90-4
+L-Glutamin|Glutamin|L-Glutamine|Glutamine|56-85-9
+L-Glutaminsäure|Glutaminsäure|L-Glutamic acid|Glutamic acid|56-86-0
+L-Histidin|Histidin|L-Histidine|Histidine|71-00-1
+L-Isoleucin|Isoleucin|L-Isoleucine|Isoleucine|73-32-5
+L-Leucin|Leucin|L-Leucine|Leucine|61-90-5
+L-Lysin|Lysin|L-Lysine|Lysine|56-87-1|657-27-2
+L-Methionin|Methionin|L-Methionine|Methionine|63-68-3
+L-Phenylalanin|Phenylalanin|L-Phenylalanine|Phenylalanine|63-91-2
+L-Prolin|Prolin|L-Proline|Proline|147-85-3
+L-Serin|Serin|L-Serine|Serine|56-45-1
+L-Threonin|Threonin|L-Threonine|Threonine|72-19-5
+L-Tryptophan|Tryptophan|73-22-3
+L-Tyrosin|Tyrosin|L-Tyrosine|Tyrosine|60-18-4
+L-Valin|Valin|L-Valine|Valine|72-18-4
+D-Fructose|Fructose|Fruchtzucker|57-48-7
+D-Galactose|Galactose|59-23-4
+Lactose|Laktose|Milchzucker|63-42-3|64044-51-5
+Maltose|69-79-4
+D-Mannose|Mannose|3458-28-4
+D-Sorbit|Sorbitol|D-Sorbitol|50-70-4
+D-Mannit|Mannitol|D-Mannitol|69-65-8
+Trehalose|D-Trehalose|99-20-7
+D-Xylose|Xylose|58-86-6
+D-Ribose|Ribose|50-69-1
+Stärke|Starch|Kartoffelstärke|9005-25-8
+Cellulose|Zellulose|9004-34-6
+Dextran|9004-54-0
+Chitosan|9012-76-4
+Agar|Agar-Agar|9002-18-0
+Adenosin-5'-triphosphat|ATP|Adenosine 5'-triphosphate|987-65-5
+beta-NAD|NAD|Nicotinamidadenindinukleotid|Nicotinamide adenine dinucleotide|53-84-9
+NADH|NADH-Dinatriumsalz|606-68-8
+NADP|NADP-Dinatriumsalz|24292-60-2
+NADPH|NADPH-Tetranatriumsalz|2646-71-1
+Coenzym A|Coenzyme A|85-61-0
+Adenin|Adenine|73-24-5
+Guanin|Guanine|73-40-5
+Cytosin|Cytosine|71-30-7
+Thymin|Thymine|65-71-4
+Uracil|66-22-8
+Riboflavin|Vitamin B2|83-88-5
+Thiaminhydrochlorid|Thiamine hydrochloride|Vitamin B1|67-03-8
+Nicotinamid|Nicotinamide|Niacinamid|98-92-0
+Nicotinsäure|Nicotinic acid|Niacin|59-67-6
+Pyridoxinhydrochlorid|Pyridoxine hydrochloride|Vitamin B6|58-56-0
+Biotin|Vitamin H|58-85-5
+Folsäure|Folic acid|59-30-3
+Cyanocobalamin|Vitamin B12|68-19-9
+Retinol|Vitamin A|68-26-8
+alpha-Tocopherol|Tocopherol|Vitamin E|59-02-9
+Ergocalciferol|Vitamin D2|50-14-6
+Cholecalciferol|Vitamin D3|67-97-0
+Menadion|Menadione|Vitamin K3|58-27-5
+Rinderserumalbumin|Bovine serum albumin|Albumin Fraktion V|BSA|9048-46-8
+MOPS|3-(N-Morpholino)propansulfonsäure|3-(N-Morpholino)propanesulfonic acid|1132-61-2
+MES|2-(N-Morpholino)ethansulfonsäure|2-(N-Morpholino)ethanesulfonic acid|4432-31-9|145224-94-8
+PIPES|5625-37-6
+Bicin|Bicine|150-25-4
+Tricin|Tricine|5704-04-1
+CAPS|1135-40-6
+TAPS|29915-38-6
+Tris-Hydrochlorid|Tris-HCl|Tris hydrochloride|1185-53-1
+Bis-Tris|6976-37-0
+CHAPS|75621-03-3
+Polysorbat 80|Tween 80|9005-65-6
+Glutathion|Glutathione|L-Glutathion reduziert|70-18-8
+Lysozym|Lysozyme|12650-88-3
+Trypsin|9002-07-7
+Pepsin|9001-75-6
+Proteinase K|39450-01-6
+Phenylmethylsulfonylfluorid|PMSF|Phenylmethanesulfonyl fluoride|329-98-6
+IPTG|Isopropyl-beta-D-thiogalactopyranosid|Isopropyl beta-D-1-thiogalactopyranoside|367-93-1
+X-Gal|5-Brom-4-chlor-3-indolyl-beta-D-galactopyranosid|7240-90-6
+Ampicillin-Natriumsalz|Ampicillin|Ampicillin sodium salt|69-52-3
+Kanamycinsulfat|Kanamycin|Kanamycin sulfate|25389-94-0
+Chloramphenicol|56-75-7
+Tetracyclinhydrochlorid|Tetracyclin|Tetracycline hydrochloride|64-75-5
+Streptomycinsulfat|Streptomycin|Streptomycin sulfate|3810-74-0
+Penicillin G Kalium|Benzylpenicillin-Kalium|Penicillin G potassium salt|113-98-4
+Gentamicinsulfat|Gentamicin|Gentamicin sulfate|1405-41-0
+Hygromycin B|31282-04-9
+Cycloheximid|Cycloheximide|66-81-9
+Rifampicin|13292-46-1
+Erythromycin|114-07-8
+Vancomycinhydrochlorid|Vancomycin|1404-93-9
+Polymyxin B-sulfat|Polymyxin B|1405-20-5
+Nystatin|1400-61-9
+Amphotericin B|1397-89-3
+Spermidin|Spermidine|124-20-9
+Spermin|Spermine|71-44-3
+Putrescin|Putrescine|1,4-Diaminobutan|110-60-1
+Cadaverin|Cadaverine|1,5-Diaminopentan|462-94-2
+Taurin|Taurine|107-35-7
+Betain|Betaine|107-43-7
+Kreatin|Creatine|57-00-1
+Koffein|Coffein|Caffeine|58-08-2
+Nikotin|Nicotine|54-11-5
+Ibuprofen|15687-27-1
+Paracetamol|Acetaminophen|103-90-2
+Acetylsalicylsäure|Acetylsalicylic acid|Aspirin|50-78-2
+Cholesterin|Cholesterol|57-88-5
+Lecithin|8002-43-5
+DAPI|4',6-Diamidin-2-phenylindol|28718-90-3
+Propidiumiodid|Propidium iodide|25535-16-4
+Hoechst 33342|23491-52-3
+Acridinorange|Acridine orange|65-61-2|494-38-2
+Trypanblau|Trypan blue|72-57-1
+Neutralrot|Neutral red|553-24-2
+Kongorot|Congo red|573-58-0
+Alizarin|72-48-0
+Malachitgrün|Malachite green|569-64-2|2437-29-8
+Bromkresolpurpur|Bromocresol purple|115-40-2
+Phenolrot|Phenol red|143-74-8
+Kresolrot|Cresol red|1733-12-6
+Nilrot|Nile red|7385-67-3
+Rhodamin B|Rhodamine B|81-88-9
+Toluidinblau|Toluidine blue|92-31-9
+Orange G|1936-15-8
+Ponceau S|6226-79-5
+Bernsteinsäure|Succinic acid|Butandisäure|110-15-6
+Fumarsäure|Fumaric acid|110-17-8
+Maleinsäure|Maleic acid|110-16-7
+Glutarsäure|Glutaric acid|110-94-1
+Itaconsäure|Itaconic acid|97-65-4
+DL-Äpfelsäure|Äpfelsäure|Malic acid|DL-Malic acid|6915-15-7
+Brenztraubensäure|Pyruvic acid|127-17-3
+Natriumpyruvat|Sodium pyruvate|113-24-6
+Glykolsäure|Glycolic acid|79-14-1
+Glyoxylsäure|Glyoxylic acid|298-12-4
+Lävulinsäure|Levulinic acid|123-76-2
+Zimtsäure|Cinnamic acid|140-10-3
+Ferulasäure|Ferulic acid|1135-24-6
+Kaffeesäure|Caffeic acid|331-39-5
+Vanillin|121-33-5
+Eugenol|97-53-0
+(R)-(+)-Limonen|Limonen|Limonene|D-Limonen|5989-27-5
+Menthol|L-Menthol|89-78-1|2216-51-5
+Campher|Kampfer|Camphor|76-22-2
+Citral|5392-40-5
+Citronellal|106-23-0
+Geraniol|106-24-1
+Linalool|78-70-6
+Brenzcatechin|Catechol|Pyrocatechol|120-80-9
+Pyrogallol|87-66-1
+Phloroglucin|Phloroglucinol|108-73-6
+p-Benzochinon|1,4-Benzochinon|p-Benzoquinone|106-51-4
+Anthrachinon|Anthraquinone|84-65-1
+Benzophenon|Benzophenone|119-61-9
+Benzil|134-81-6
+Benzoin|119-53-9
+Indol|Indole|120-72-9
+Chinolin|Quinoline|91-22-5
+Pyrrol|Pyrrole|109-97-7
+Thiophen|Thiophene|110-02-1
+Furan|110-00-9
+Pyrazin|Pyrazine|290-37-9
+Pyrimidin|Pyrimidine|289-95-2
+Piperazin|Piperazine|110-85-0
+DABCO|1,4-Diazabicyclo[2.2.2]octan|1,4-Diazabicyclo[2.2.2]octane|280-57-9
+DBU|1,8-Diazabicyclo[5.4.0]undec-7-en|6674-22-2
+Tributylamin|Tributylamine|102-82-9
+Hexamethylendiamin|1,6-Diaminohexan|Hexamethylenediamine|124-09-4
+epsilon-Caprolactam|Caprolactam|105-60-2
+Acetamid|Acetamide|60-35-5
+Formamid|Formamide|75-12-7
+N-Methylformamid|N-Methylformamide|123-39-7
+Propionitril|Propionitrile|107-12-0
+Benzylamin|Benzylamine|100-46-9
+Cyclohexylamin|Cyclohexylamine|108-91-8
+Isopropylamin|Isopropylamine|75-31-0
+tert-Butylamin|tert-Butylamine|75-64-9
+Ethylamin|Ethylamine|75-04-7
+Methylamin|Methylamine|74-89-5
+Dimethylamin|Dimethylamine|124-40-3
+Diisopropylamin|Diisopropylamine|108-18-9
+o-Phenylendiamin|1,2-Phenylendiamin|o-Phenylenediamine|95-54-5
+p-Phenylendiamin|1,4-Phenylendiamin|p-Phenylenediamine|106-50-3
+Benzidin|Benzidine|92-87-5
+4-Aminophenol|p-Aminophenol|123-30-8
+2-Aminophenol|o-Aminophenol|95-55-6
+Sulfanilamid|Sulfanilamide|63-74-1
+4-Nitroanilin|p-Nitroanilin|4-Nitroaniline|100-01-6
+Bromethan|Ethylbromid|Bromoethane|74-96-4
+Iodethan|Ethyliodid|Iodoethane|75-03-6
+1-Chlorbutan|1-Chlorobutane|109-69-3
+Benzylbromid|Benzyl bromide|100-39-0
+Allylbromid|Allyl bromide|106-95-6
+Dibrommethan|Dibromomethane|74-95-3
+Diiodmethan|Diiodomethane|75-11-6
+1,2-Dibromethan|1,2-Dibromoethane|106-93-4
+Hexafluorisopropanol|1,1,1,3,3,3-Hexafluor-2-propanol|HFIP|920-66-1
+2,2,2-Trifluorethanol|Trifluorethanol|2,2,2-Trifluoroethanol|TFE|75-89-8
+Perfluorhexan|Tetradecafluorhexan|Perfluorohexane|355-42-0
+Fluorbenzol|Fluorobenzene|462-06-6
+Hexachlorethan|Hexachloroethane|67-72-1
+(3-Aminopropyl)triethoxysilan|APTES|(3-Aminopropyl)triethoxysilane|919-30-2
+(3-Glycidyloxypropyl)trimethoxysilan|GPTMS|(3-Glycidyloxypropyl)trimethoxysilane|2530-83-8
+Triethylsilan|Triethylsilane|617-86-7
+Tetramethylorthosilicat|TMOS|Tetramethyl orthosilicate|681-84-5
+Dichlordimethylsilan|Dichlorodimethylsilane|75-78-5
+Hexamethyldisiloxan|Hexamethyldisiloxane|HMDSO|107-46-0
+Polydimethylsiloxan|PDMS|Silikonöl|Polydimethylsiloxane|63148-62-9
+Tetrakis(triphenylphosphin)palladium(0)|Pd(PPh3)4|Tetrakis(triphenylphosphine)palladium(0)|14221-01-3
+Palladium(II)-acetat|Palladiumacetat|Palladium(II) acetate|3375-31-3
+Kupfer(I)-iodid|Kupferiodid|Copper(I) iodide|7681-65-4
+Silber(I)-oxid|Silberoxid|Silver(I) oxide|20667-12-3
+Tetrachlorogoldsäure|Gold(III)-chlorid|Gold(III) chloride|Chloroauric acid|16961-25-4|13453-07-1
+Hexachloroplatinsäure|Hexachloroplatinic acid|16941-12-1
+Ruthenium(III)-chlorid|Rutheniumchlorid|Ruthenium(III) chloride|10049-08-8
+Diisobutylaluminiumhydrid|DIBAL-H|Diisobutylaluminum hydride|1191-15-7
+Natriumtriacetoxyborhydrid|Sodium triacetoxyborohydride|56553-60-7
+Boran-Tetrahydrofuran-Komplex|Borane tetrahydrofuran complex|14044-65-6
+Tetrabutylammoniumfluorid|TBAF|Tetrabutylammonium fluoride|429-41-4
+Lithiumdiisopropylamid|LDA|Lithium diisopropylamide|4111-54-0
+N-Bromsuccinimid|NBS|N-Bromosuccinimide|128-08-5
+N-Chlorsuccinimid|NCS|N-Chlorosuccinimide|128-09-6
+N-Iodsuccinimid|NIS|N-Iodosuccinimide|516-12-1
+Succinimid|Succinimide|123-56-8
+3-Chlorperbenzoesäure|mCPBA|3-Chloroperbenzoic acid|937-14-4
+2,3-Dichlor-5,6-dicyano-1,4-benzochinon|DDQ|84-58-2
+TEMPO|2,2,6,6-Tetramethylpiperidinyloxyl|2564-83-2
+Dess-Martin-Periodinan|Dess-Martin periodinane|87413-09-0
+Oxone|Kaliumperoxomonosulfat|Potassium peroxymonosulfate|70693-62-8
+Natriumperiodat|Sodium periodate|7790-28-5
+Periodsäure|Periodic acid|10450-60-9
+Trifluormethansulfonsäure|Triflic acid|Trifluoromethanesulfonic acid|1493-13-6
+Trifluormethansulfonsäureanhydrid|Triflic anhydride|Trifluoromethanesulfonic anhydride|358-23-6
+Methansulfonsäure|Methanesulfonic acid|75-75-2
+Methansulfonylchlorid|Mesylchlorid|Methanesulfonyl chloride|124-63-0
+p-Toluolsulfonylchlorid|Tosylchlorid|p-Toluenesulfonyl chloride|98-59-9
+Di-tert-butyldicarbonat|Boc-Anhydrid|Di-tert-butyl dicarbonate|Boc2O|24424-99-5
+Fmoc-Chlorid|Fmoc-Cl|9-Fluorenylmethyl chloroformate|28920-43-6
+EDC-Hydrochlorid|EDC|EDCI|1-Ethyl-3-(3-dimethylaminopropyl)carbodiimide hydrochloride|25952-53-8
+HOBt|1-Hydroxybenzotriazol|1-Hydroxybenzotriazole|2592-95-2|123333-53-9
+HATU|148893-10-1
+N,N'-Carbonyldiimidazol|CDI|1,1'-Carbonyldiimidazole|530-62-1
+Triethylorthoformiat|Triethyl orthoformate|122-51-0
+Trimethylorthoformiat|Trimethyl orthoformate|149-73-5
+1-Butyl-3-methylimidazoliumchlorid|BMIM Cl|1-Butyl-3-methylimidazolium chloride|79917-90-1
+1-Butyl-3-methylimidazoliumtetrafluoroborat|BMIM BF4|1-Butyl-3-methylimidazolium tetrafluoroborate|174501-65-6
+1-Ethyl-3-methylimidazoliumacetat|EMIM OAc|1-Ethyl-3-methylimidazolium acetate|143314-17-4
+Polyvinylpyrrolidon|PVP|Povidon|Polyvinylpyrrolidone|9003-39-8
+Polyvinylalkohol|PVA|Polyvinyl alcohol|9002-89-5
+Polyacrylamid|Polyacrylamide|9003-05-8
+Polystyrol|Polystyrene|9003-53-6
+Carboxymethylcellulose|CMC|Carboxymethylcellulose sodium|9004-32-4
 """
 
     class Chem(val name: String, val keys: List<String>, val cas: List<String>)

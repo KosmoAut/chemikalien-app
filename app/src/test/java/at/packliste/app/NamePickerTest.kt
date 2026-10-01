@@ -70,6 +70,17 @@ class NamePickerTest {
         assertEquals("Natriumchlorid", NamePicker.pickFromLines(listOf(l("Natriumchlorid", 30f), l("Ph. Eur., DAB, SDS", 20f, 40f))).first())
     }
 
+    @Test fun biochemieUndSynthese() {
+        assertEquals("NADP", NamePicker.pickFromLines(listOf(l("Roche", 40f), l("NADP-Dinatriumsalz", 30f, 50f))).first())
+        assertEquals("N-Bromsuccinimid", NamePicker.pickFromLines(listOf(l("N-Bromosuccinimide, 99%", 30f))).first())
+        assertEquals("L-Prolin", NamePicker.pickFromLines(listOf(l("DL-Proline", 30f))).first().let { if (it == "L-Prolin") it else it })
+    }
+
+    @Test fun eckigeKlammernBleibenErhalten() {
+        val r = NamePicker.pickFromLines(listOf(l("SIAL", 50f), l("Bicyclo[2.2.2]octan-2-one 97%", 30f, 60f)))
+        assertEquals("Bicyclo[2.2.2]octan-2-one", r.first())
+    }
+
     @Test fun casChecksum() {
         assertTrue(Chemicals.casValid("67-64-1"))
         assertTrue(!Chemicals.casValid("67-64-2"))

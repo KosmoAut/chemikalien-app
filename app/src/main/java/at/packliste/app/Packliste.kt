@@ -20,7 +20,7 @@ object Packliste {
             val brk = if (p < pages - 1) " style=\"page-break-after:always\"" else ""
             body.append(
                 """<div$brk><p class="t">Packliste »Gefährliche Abfälle in Kleingebinden«</p><p class="r">Blatt ${p + 1} von $pages</p>
-<table><tr><td style="height:36pt;width:75%">Abfallerzeuger/Kunde:</td><td>Fass-Nr.: ${esc(box.name)}</td></tr>
+<table><tr><td style="height:36pt;width:75%">Abfallerzeuger/Kunde: TU Graz</td><td>Fass-Nr.: ${esc(box.name)}</td></tr>
 <tr><td colspan="2">Übergebinde: &nbsp;☐ 30 l Fass &nbsp;☐ 60 l Fass &nbsp;☐ 120 l Fass &nbsp;☐ 200 l Fass &nbsp;☐ Sonstige ________________</td></tr></table><br>
 <table class="g"><tr><th rowspan="2" style="width:8%">lfd.Nr.</th><th rowspan="2" style="text-align:left">Produkt- oder chemische Bezeichnung und Art des Gebindes</th><th style="width:15%">Menge</th><th colspan="2" style="width:20%">Konsistenz</th></tr>
 <tr><th><i>Liter / kg</i></th><th><i>fest</i></th><th><i>flüssig</i></th></tr>$tr</table></div>"""
