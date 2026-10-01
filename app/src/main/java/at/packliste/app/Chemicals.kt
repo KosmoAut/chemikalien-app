@@ -143,7 +143,7 @@ Saccharose|Sucrose|57-50-1
 Glycerin|Glycerol|Glycerine|56-81-5
 Ethylenglycol|Ethylenglykol|Ethylene glycol|Ethan-1,2-diol|107-21-1
 Polyethylenglycol|Polyethylene glycol|PEG|25322-68-3
-Natriumdodecylsulfat|Sodium dodecyl sulfate|SDS|Natriumlaurylsulfat|151-21-3
+Natriumdodecylsulfat|Sodium dodecyl sulfate|Natriumlaurylsulfat|151-21-3
 Acrylamid|Acrylamide|79-06-1
 Hydrochinon|Hydroquinone|123-31-9
 Thioharnstoff|Thiourea|62-56-6
@@ -175,6 +175,244 @@ Ninhydrin|485-47-2
 Nitrobenzol|Nitrobenzene|98-95-3
 Chlorbenzol|Chlorobenzene|108-90-7
 Brombenzol|Bromobenzene|108-86-1
+Acetophenon|Acetophenone|98-86-2
+Acrylsäure|Acrylic acid|79-10-7
+Acrylnitril|Acrylonitrile|107-13-1
+Adipinsäure|Adipic acid|124-04-9
+Allylalkohol|Allyl alcohol|107-18-6
+Aluminiumchlorid|Aluminium chloride|Aluminum chloride|7446-70-0
+Aluminiumoxid|Aluminium oxide|Aluminum oxide|1344-28-1
+Aluminiumsulfat|Aluminium sulfate|10043-01-3
+Ammoniumcarbonat|Ammonium carbonate|506-87-6
+Ammoniumhydrogencarbonat|Ammonium bicarbonate|Ammonium hydrogen carbonate|1066-33-7
+Ammoniumsulfat|Ammonium sulfate|7783-20-2
+Ammoniumperoxodisulfat|Ammoniumpersulfat|Ammonium persulfate|Ammonium peroxodisulfate|APS|7727-54-0
+Ammoniumheptamolybdat|Ammoniummolybdat|Ammonium molybdate|12054-85-2|12027-67-7
+Ammoniumthiocyanat|Ammoniumrhodanid|Ammonium thiocyanate|1762-95-4
+Ammoniumfluorid|Ammonium fluoride|12125-01-8
+Ammoniumeisen(II)-sulfat|Mohrsches Salz|Ammonium iron(II) sulfate|7783-85-9
+Ammoniumdichromat|Ammonium dichromate|7789-09-5
+Anisol|Anisole|Methoxybenzol|100-66-3
+Anthracen|Anthracene|120-12-7
+Antimon(III)-chlorid|Antimontrichlorid|Antimony trichloride|10025-91-9
+Arsen(III)-oxid|Arsentrioxid|Arsenic trioxide|1327-53-3
+Bariumhydroxid|Barium hydroxide|17194-00-2|12230-71-6
+Bariumnitrat|Barium nitrate|10022-31-8
+Bariumsulfat|Barium sulfate|7727-43-7
+Benzylalkohol|Benzyl alcohol|100-51-6
+Benzylchlorid|Benzyl chloride|100-44-7
+Benzoylchlorid|Benzoyl chloride|98-88-4
+Dibenzoylperoxid|Benzoylperoxid|Benzoyl peroxide|94-36-0
+Benzonitril|Benzonitrile|100-47-0
+Biphenyl|Diphenyl|92-52-4
+Bismut(III)-nitrat|Wismutnitrat|Bismuth(III) nitrate|10361-44-1|10035-06-0
+Bisphenol A|80-05-7
+Brom|Bromine|7726-95-6
+Bromwasserstoffsäure|Hydrobromic acid|10035-10-6
+Bromoform|Tribrommethan|Tribromomethane|75-25-2
+1-Brombutan|1-Bromobutane|n-Butylbromid|109-65-9
+Bromphenolblau|Bromophenol blue|115-39-9
+Bromkresolgrün|Bromocresol green|76-60-8
+n-Butylamin|Butylamine|109-73-9
+2-Butoxyethanol|Butylglykol|Ethylene glycol monobutyl ether|111-76-2
+gamma-Butyrolacton|Butyrolacton|gamma-Butyrolactone|GBL|96-48-0
+Buttersäure|Butyric acid|Butansäure|107-92-6
+Cadmiumchlorid|Cadmium chloride|10108-64-2
+Cadmiumsulfat|Cadmium sulfate|10124-36-4
+Caesiumchlorid|Cäsiumchlorid|Cesium chloride|Caesium chloride|7647-17-8
+Calciumoxid|Branntkalk|Calcium oxide|1305-78-8
+Calciumsulfat|Gips|Calcium sulfate|7778-18-9|10101-41-4
+Calciumnitrat|Calcium nitrate|10124-37-5|13477-34-4
+Calciumcarbid|Calcium carbide|75-20-7
+Calciumfluorid|Calcium fluoride|7789-75-5
+Cer(IV)-sulfat|Cerium(IV) sulfate|13590-82-4
+Chloralhydrat|Chloral hydrate|302-17-0
+Chlorsulfonsäure|Chlorosulfonic acid|7790-94-5
+Chrom(III)-chlorid|Chromchlorid|Chromium(III) chloride|10025-73-7|10060-12-5
+Chrom(VI)-oxid|Chromtrioxid|Chromium trioxide|Chromium(VI) oxide|1333-82-0
+Chrom(III)-nitrat|Chromium(III) nitrate|13548-38-4|7789-02-8
+Cobalt(II)-nitrat|Cobaltnitrat|Cobalt(II) nitrate|10141-05-6|10026-22-9
+Cobalt(II)-sulfat|Cobaltsulfat|Cobalt(II) sulfate|10124-43-3
+Kupfer(II)-chlorid|Kupferchlorid|Copper(II) chloride|7447-39-4|10125-13-0
+Kupfer(II)-nitrat|Kupfernitrat|Copper(II) nitrate|3251-23-8
+Kupfer(II)-oxid|Kupferoxid|Copper(II) oxide|1317-38-0
+Kupfer(I)-chlorid|Copper(I) chloride|7758-89-6
+Kupfer(II)-acetat|Kupferacetat|Copper(II) acetate|142-71-2
+Cumol|Isopropylbenzol|Cumene|98-82-8
+Cyclohexanol|108-93-0
+Cyclohexen|Cyclohexene|110-83-8
+Cyclopentan|Cyclopentane|287-92-3
+n-Decan|Decan|Decane|124-18-5
+Diacetonalkohol|Diacetone alcohol|123-42-2
+1,2-Dichlorbenzol|1,2-Dichlorobenzene|o-Dichlorbenzol|95-50-1
+1,4-Dichlorbenzol|1,4-Dichlorobenzene|p-Dichlorbenzol|106-46-7
+Dicyclohexylcarbodiimid|N,N'-Dicyclohexylcarbodiimide|DCC|538-75-0
+Diethylenglycol|Diethylenglykol|Diethylene glycol|111-46-6
+Diethylphthalat|Diethyl phthalate|84-66-2
+Diisopropylether|Diisopropyl ether|108-20-3
+N,N-Diisopropylethylamin|DIPEA|Hünig-Base|N,N-Diisopropylethylamine|7087-68-5
+N,N-Dimethylacetamid|Dimethylacetamid|N,N-Dimethylacetamide|DMAc|127-19-5
+4-(Dimethylamino)pyridin|DMAP|4-Dimethylaminopyridine|1122-58-3
+Dimethylsulfat|Dimethyl sulfate|77-78-1
+Dimethylcarbonat|Dimethyl carbonate|616-38-6
+1,2-Dimethoxyethan|1,2-Dimethoxyethane|Monoglyme|DME|110-71-4
+2,4-Dinitrophenylhydrazin|2,4-Dinitrophenylhydrazine|DNPH|119-26-6
+Diphenylamin|Diphenylamine|122-39-4
+Dithiothreitol|DTT|3483-12-3
+n-Dodecan|Dodecan|Dodecane|112-40-3
+Eisen(III)-nitrat|Eisennitrat|Iron(III) nitrate|Ferric nitrate|10421-48-4|7782-61-8
+Eisen(III)-sulfat|Iron(III) sulfate|10028-22-5
+Eisen(II)-chlorid|Iron(II) chloride|7758-94-3|13478-10-9
+Epichlorhydrin|Epichlorohydrin|106-89-8
+Ethanolamin|2-Aminoethanol|Monoethanolamin|Ethanolamine|141-43-5
+Diethanolamin|Diethanolamine|111-42-2
+Triethanolamin|Triethanolamine|102-71-6
+2-Ethoxyethanol|Ethylglykol|110-80-5
+2-Methoxyethanol|Methylglykol|109-86-4
+Ethylformiat|Ethyl formate|Ameisensäureethylester|109-94-4
+Ethylenoxid|Ethylene oxide|75-21-8
+Fluorescein|2321-07-5
+Furfural|Furan-2-carbaldehyd|98-01-1
+Gallussäure|Gallic acid|149-91-7
+Glycin|Glycine|56-40-6
+Guanidinhydrochlorid|Guanidine hydrochloride|Guanidiniumchlorid|50-01-1
+Guanidinthiocyanat|Guanidine thiocyanate|Guanidiniumthiocyanat|593-84-0
+HEPES|7365-45-9
+Hexamethylentetramin|Urotropin|Hexamine|Methenamine|100-97-0
+1-Hexanol|Hexanol|111-27-3
+Hexamethyldisilazan|HMDS|Hexamethyldisilazane|999-97-3
+Imidazol|Imidazole|288-32-4
+Iodmethan|Methyliodid|Iodomethane|Methyl iodide|74-88-4
+Isoamylalkohol|3-Methyl-1-butanol|Isopentylalkohol|Isoamyl alcohol|123-51-3
+Isopropylacetat|Isopropyl acetate|108-21-4
+Kaliumbromat|Potassium bromate|7758-01-2
+Kaliumchlorat|Potassium chlorate|3811-04-9
+Kaliumperchlorat|Potassium perchlorate|7778-74-7
+Kaliumhexacyanoferrat(II)|Gelbes Blutlaugensalz|Kaliumferrocyanid|Potassium hexacyanoferrate(II)|Potassium ferrocyanide|14459-95-1|13943-58-3
+Kaliumhexacyanoferrat(III)|Rotes Blutlaugensalz|Kaliumferricyanid|Potassium hexacyanoferrate(III)|Potassium ferricyanide|13746-66-2
+Kaliumhydrogencarbonat|Potassium hydrogen carbonate|Potassium bicarbonate|298-14-6
+Kaliumhydrogenphthalat|Potassium hydrogen phthalate|KHP|877-24-7
+Kaliumiodat|Potassium iodate|7758-05-6
+Kaliumnatriumtartrat|Seignettesalz|Potassium sodium tartrate|Rochelle salt|6381-59-5|304-59-6
+Kaliumperoxodisulfat|Kaliumpersulfat|Potassium persulfate|7727-21-1
+Kaliumsulfat|Potassium sulfate|7778-80-5
+Kaliumthiocyanat|Kaliumrhodanid|Potassium thiocyanate|333-20-0
+Kaliumfluorid|Potassium fluoride|7789-23-3
+Kaliumacetat|Potassium acetate|127-08-2
+Kalium-tert-butanolat|Kalium-tert-butylat|Potassium tert-butoxide|865-47-4
+Lithiumchlorid|Lithium chloride|7447-41-8
+Lithiumhydroxid|Lithium hydroxide|1310-65-2
+Lithiumcarbonat|Lithium carbonate|554-13-2
+Lithiumbromid|Lithium bromide|7550-35-8
+n-Butyllithium|Butyllithium|n-Butyllithium solution|109-72-8
+Magnesiumoxid|Magnesium oxide|1309-48-4
+Magnesiumnitrat|Magnesium nitrate|10377-60-3|13446-18-9
+Maleinsäureanhydrid|Maleic anhydride|108-31-6
+Malonsäure|Malonic acid|141-82-2
+Mangan(II)-chlorid|Manganchlorid|Manganese(II) chloride|7773-01-5
+Mangan(II)-sulfat|Mangansulfat|Manganese(II) sulfate|7785-87-7
+Mangan(IV)-oxid|Braunstein|Mangandioxid|Manganese dioxide|1313-13-9
+2-Mercaptoethanol|beta-Mercaptoethanol|2-Mercaptoethanol|60-24-2
+Methacrylsäure|Methacrylic acid|79-41-4
+Methylmethacrylat|Methyl methacrylate|MMA|80-62-6
+Methylcyclohexan|Methylcyclohexane|108-87-2
+Methylrot|Methyl red|493-52-7
+Milchsäure|Lactic acid|50-21-5
+Murexid|Murexide|3051-09-0
+Naphthalin|Naphthalene|91-20-3
+1-Naphthol|alpha-Naphthol|90-15-3
+2-Naphthol|beta-Naphthol|135-19-3
+Natriumbenzoat|Sodium benzoate|532-32-1
+Natriumhydrogensulfit|Natriumbisulfit|Sodium bisulfite|Sodium hydrogen sulfite|7631-90-5
+Natriumdisulfit|Natriummetabisulfit|Sodium metabisulfite|Sodium disulfite|7681-57-4
+Natriumchlorat|Sodium chlorate|7775-09-9
+Trinatriumcitrat|Natriumcitrat|Sodium citrate|Trisodium citrate|68-04-2|6132-04-3
+Natriumformiat|Sodium formate|141-53-7
+Natriumhydrid|Sodium hydride|7646-69-7
+Natriumiodid|Sodium iodide|7681-82-5
+Natriummethanolat|Natriummethylat|Sodium methoxide|124-41-4
+Natriummolybdat|Sodium molybdate|7631-95-0|10102-40-6
+Natriumoxalat|Sodium oxalate|62-76-0
+Natriumperchlorat|Sodium perchlorate|7601-89-0
+Natriumperoxid|Sodium peroxide|1313-60-6
+Trinatriumphosphat|Natriumphosphat|Trisodium phosphate|7601-54-9
+Natriumsilikat|Wasserglas|Natronwasserglas|Sodium silicate|1344-09-8
+Natriumsulfid|Sodium sulfide|1313-82-2
+Natriumsulfit|Sodium sulfite|7757-83-7
+Natriumtetraborat|Borax|Dinatriumtetraborat|Sodium tetraborate|1303-96-4|1330-43-4
+Natriumwolframat|Sodium tungstate|10213-10-2
+Natriumhydrogensulfat|Sodium hydrogen sulfate|Sodium bisulfate|7681-38-1
+Natriumcyanoborhydrid|Sodium cyanoborohydride|25895-60-7
+Nickel(II)-chlorid|Nickelchlorid|Nickel(II) chloride|7718-54-9|7791-20-0
+Nickel(II)-nitrat|Nickelnitrat|Nickel(II) nitrate|13138-45-9|13478-00-7
+Nitromethan|Nitromethane|75-52-5
+4-Nitrophenol|p-Nitrophenol|4-Nitrophenol|100-02-7
+n-Octan|Octan|Octane|111-65-9
+1-Octanol|Octanol|111-87-5
+Ölsäure|Oleic acid|112-80-1
+Osmiumtetroxid|Osmium tetroxide|Osmium(VIII)-oxid|20816-12-0
+Oxalylchlorid|Oxalyl chloride|79-37-8
+Palladium(II)-chlorid|Palladiumchlorid|Palladium(II) chloride|7647-10-1
+Palladium auf Aktivkohle|Palladium on carbon|Pd/C|7440-05-3
+Paraformaldehyd|Paraformaldehyde|30525-89-4
+1-Pentanol|Pentanol|n-Amylalkohol|71-41-0
+Peressigsäure|Peroxyessigsäure|Peracetic acid|79-21-0
+Phenylhydrazin|Phenylhydrazine|100-63-0
+Phosphorpentoxid|Phosphor(V)-oxid|Phosphorus pentoxide|1314-56-3
+Phosphorpentachlorid|Phosphorus pentachloride|10026-13-8
+Phosphoroxychlorid|Phosphorylchlorid|Phosphorus oxychloride|10025-87-3
+Phosphortrichlorid|Phosphorus trichloride|7719-12-2
+Phthalsäureanhydrid|Phthalic anhydride|85-44-9
+Pikrinsäure|Picric acid|2,4,6-Trinitrophenol|88-89-1
+1,2-Propandiol|Propylenglycol|Propylenglykol|Propylene glycol|57-55-6
+Propylencarbonat|Propylene carbonate|108-32-7
+Resorcin|Resorcinol|108-46-3
+Salicylaldehyd|Salicylaldehyde|90-02-8
+Schwefelkohlenstoff|Kohlenstoffdisulfid|Carbon disulfide|75-15-0
+Silberchlorid|Silver chloride|7783-90-6
+Silbersulfat|Silver sulfate|10294-26-5
+Stearinsäure|Stearic acid|57-11-4
+Strontiumchlorid|Strontium chloride|10476-85-4
+Strontiumnitrat|Strontium nitrate|10042-76-9
+Sulfanilsäure|Sulfanilic acid|121-57-3
+Amidosulfonsäure|Sulfaminsäure|Sulfamic acid|5329-14-6
+Tetrabutylammoniumbromid|Tetrabutylammonium bromide|TBAB|1643-19-2
+Tetraethylorthosilicat|Tetraethoxysilan|Tetraethyl orthosilicate|TEOS|78-10-4
+Tetramethylsilan|Tetramethylsilane|75-76-3
+N,N,N',N'-Tetramethylethylendiamin|TEMED|Tetramethylethylenediamine|110-18-9
+Thioacetamid|Thioacetamide|62-55-5
+Thymol|89-83-8
+Thymolblau|Thymol blue|76-61-9
+Titan(IV)-chlorid|Titantetrachlorid|Titanium tetrachloride|7550-45-0
+Titandioxid|Titanium dioxide|13463-67-7
+p-Toluolsulfonsäure|Toluol-4-sulfonsäure|p-Toluenesulfonic acid|Tosylsäure|104-15-4|6192-52-5
+Tributylphosphat|Tributyl phosphate|126-73-8
+Triphenylphosphin|Triphenylphosphine|603-35-0
+Triton X-100|9002-93-1
+Polysorbat 20|Tween 20|9005-64-5
+Uranylacetat|Uranyl acetate|541-09-3|6159-44-0
+Vanadium(V)-oxid|Vanadiumpentoxid|Vanadium pentoxide|1314-62-1
+Zinkacetat|Zinc acetate|557-34-6|5970-45-6
+Zinknitrat|Zinc nitrate|7779-88-6|10196-18-6
+Zinkoxid|Zinc oxide|1314-13-2
+Zinn(II)-chlorid|Zinnchlorid|Tin(II) chloride|Stannous chloride|7772-99-8|10025-69-1
+Zinn(IV)-chlorid|Tin(IV) chloride|7646-78-8
+Blei(II)-acetat|Bleiacetat|Lead(II) acetate|301-04-2|6080-56-4
+Blei(II)-oxid|Bleioxid|Lead(II) oxide|1317-36-8
+Quecksilber(II)-nitrat|Mercury(II) nitrate|10045-94-0
+Quecksilber(II)-oxid|Mercury(II) oxide|21908-53-2
+Quecksilber(II)-sulfat|Mercury(II) sulfate|7783-35-9
+Agarose|9012-36-6
+Coomassie Brillantblau R-250|Coomassie Brilliant Blue R-250|6104-59-2
+Coomassie Brillantblau G-250|Coomassie Brilliant Blue G-250|6104-58-1
+Eriochromschwarz T|Eriochrome Black T|1787-61-7
+3,3'-Diaminobenzidin|Diaminobenzidin|3,3'-Diaminobenzidine|91-95-2
+Sudan III|85-86-9
+Safranin O|Safranin|477-73-6
+Hämatoxylin|Hematoxylin|517-28-2
+Trimethylchlorsilan|Chlortrimethylsilan|Chlorotrimethylsilane|75-77-4
+Natriumnitroprussid|Sodium nitroprusside|13755-38-9
+Terpentinöl|Turpentine oil|8006-64-2
 """
 
     class Chem(val name: String, val keys: List<String>, val cas: List<String>)
@@ -206,7 +444,7 @@ Brombenzol|Bromobenzene|108-86-1
         return sb.toString()
     }
 
-    class Hit(val chem: Chem, val keyLength: Int, val lineIndex: Int)
+    class Hit(val chem: Chem, val keyLength: Int, val lineIndex: Int, val exact: Boolean = true)
 
     /**
      * Sucht in den Zeilen (Reihenfolge = Wichtigkeit, größte Schrift zuerst) nach bekannten Chemikalien.
@@ -224,14 +462,24 @@ Brombenzol|Bromobenzene|108-86-1
                     for (c in all) for (k in c.keys) {
                         if (joined.startsWith(k) && joined.length - k.length <= 3 &&
                             (joined.length == k.length || !joined[k.length].isDigit())) {
-                            hits.add(Hit(c, k.length, li))
+                            hits.add(Hit(c, k.length, li, exact = true))
+                        } else if (k.length >= 8 && joined.length >= k.length - 2 && joined.length <= k.length + 5 &&
+                            joined[0] == k[0] && joined[1] == k[1]) {
+                            // lange Namen: ein paar falsch gelesene Buchstaben erlauben
+                            val maxD = k.length / 8
+                            var best = Int.MAX_VALUE
+                            for (len in (k.length - maxD)..minOf(joined.length, k.length + maxD)) {
+                                if (len <= 0) continue
+                                best = minOf(best, lev(joined.substring(0, len), k))
+                            }
+                            if (best <= maxD) hits.add(Hit(c, k.length, li, exact = false))
                         }
                     }
                 }
             }
         }
         // längster Treffer gewinnt bei gleicher Zeile, sonst die wichtigere Zeile
-        return hits.sortedWith(compareBy<Hit> { it.lineIndex }.thenByDescending { it.keyLength })
+        return hits.sortedWith(compareBy<Hit> { it.lineIndex }.thenBy { if (it.exact) 0 else 1 }.thenByDescending { it.keyLength })
             .distinctBy { it.chem.name }
     }
 
@@ -244,6 +492,20 @@ Brombenzol|Bromobenzene|108-86-1
             all.firstOrNull { cas in it.cas }?.let { if (it !in out) out.add(it) }
         }
         return out
+    }
+
+    private fun lev(a: String, b: String): Int {
+        var prev = IntArray(b.length + 1) { it }
+        var cur = IntArray(b.length + 1)
+        for (i in 1..a.length) {
+            cur[0] = i
+            for (j in 1..b.length) {
+                val cost = if (a[i - 1] == b[j - 1]) 0 else 1
+                cur[j] = minOf(cur[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost)
+            }
+            val t = prev; prev = cur; cur = t
+        }
+        return prev[b.length]
     }
 
     fun casValid(cas: String): Boolean {

@@ -52,6 +52,24 @@ class NamePickerTest {
         assertTrue(r.first(), r.first().startsWith("Spezialreiniger"))
     }
 
+    @Test fun langeExotischeNamen() {
+        assertEquals("Kaliumhexacyanoferrat(III)", NamePicker.pickFromLines(listOf(l("Kaliumhexacyanoferrat(III) zur Analyse", 30f))).first())
+        assertEquals("N,N,N',N'-Tetramethylethylendiamin", NamePicker.pickFromLines(listOf(l("TEMED for electrophoresis", 30f))).first())
+        assertEquals("Ammoniumeisen(II)-sulfat", NamePicker.pickFromLines(listOf(l("Ammoniumeisen(II)-sulfat Hexahydrat", 30f))).first())
+        assertEquals("Natriumtetraborat", NamePicker.pickFromLines(listOf(l("di-Natriumtetraborat Decahydrat", 30f))).first().let { if (it == "Natriumtetraborat") it else it })
+    }
+
+    @Test fun unscharfBeiLesefehlern() {
+        assertEquals("Acetonitril", NamePicker.pickFromLines(listOf(l("Acetonitrll gradient grade", 30f))).first())
+        assertEquals("Dichlormethan", NamePicker.pickFromLines(listOf(l("Dichlormethen stabilisiert", 30f))).first())
+        assertEquals("Natriumsulfit", NamePicker.pickFromLines(listOf(l("Natriumsulfit wasserfrei", 30f))).first())
+        assertEquals("Natriumsulfat", NamePicker.pickFromLines(listOf(l("Natriumsulfat wasserfrei", 30f))).first())
+    }
+
+    @Test fun dabUndSdsSindKeineChemikalien() {
+        assertEquals("Natriumchlorid", NamePicker.pickFromLines(listOf(l("Natriumchlorid", 30f), l("Ph. Eur., DAB, SDS", 20f, 40f))).first())
+    }
+
     @Test fun casChecksum() {
         assertTrue(Chemicals.casValid("67-64-1"))
         assertTrue(!Chemicals.casValid("67-64-2"))
